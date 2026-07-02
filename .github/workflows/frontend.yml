@@ -1,4 +1,4 @@
-name: Deploy Streamlit Frontend to EC2
+name: Frontend to EC2
 
 on:
   # push:
