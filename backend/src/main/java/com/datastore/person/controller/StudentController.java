@@ -20,17 +20,6 @@ public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
     
-// @PostMapping("/student/post")
-// public ResponseEntity<String> postStudent(
-//         @RequestBody StudentRequest requestDto,
-//         HttpServletRequest request) {
-
-// Student student = new Student();
-// student.setName(requestDto.getName());
-// studentRepository.save(student);
-// logger.info("Posted student to DB : {}", student.getName());
-// return ResponseEntity.ok("Student successfully posted.");
-//     }
 
     @PostMapping("/student/post")
 public ResponseEntity<String> postStudent(@RequestBody StudentRequest requestDto,
