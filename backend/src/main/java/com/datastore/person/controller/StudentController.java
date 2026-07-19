@@ -25,7 +25,7 @@ public class StudentController {
 public ResponseEntity<String> postStudent(@RequestBody StudentRequest requestDto,
                                           HttpServletRequest request) {
 
-    Student student = new Student();
+    var student = new Student();
 
     student.setName(requestDto.getName());
     student.setAge(requestDto.getAge());
