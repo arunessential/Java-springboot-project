@@ -1,5 +1,6 @@
 package com.datastore.person.controller;
 
+import com.datastore.person.dto.StudentRequest;
 import com.datastore.person.pojo.Student;
 import com.datastore.person.repository.StudentRepository;
 import org.slf4j.Logger;
