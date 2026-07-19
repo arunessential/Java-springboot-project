@@ -20,17 +20,33 @@ public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
     
-@PostMapping("/student/post")
-public ResponseEntity<String> postStudent(
-        @RequestBody StudentRequest requestDto,
-        HttpServletRequest request) {
+// @PostMapping("/student/post")
+// public ResponseEntity<String> postStudent(
+//         @RequestBody StudentRequest requestDto,
+//         HttpServletRequest request) {
 
-Student student = new Student();
-student.setName(requestDto.getName());
-studentRepository.save(student);
-logger.info("Posted student to DB : {}", student.getName());
-return ResponseEntity.ok("Student successfully posted.");
-    }
+// Student student = new Student();
+// student.setName(requestDto.getName());
+// studentRepository.save(student);
+// logger.info("Posted student to DB : {}", student.getName());
+// return ResponseEntity.ok("Student successfully posted.");
+//     }
+
+    @PostMapping("/student/post")
+public ResponseEntity<String> postStudent(@RequestBody StudentRequest requestDto,
+                                          HttpServletRequest request) {
+
+    Student student = new Student();
+
+    student.setName(requestDto.getName());
+    student.setAge(requestDto.getAge());
+
+    studentRepository.save(student);
+
+    logger.info("Posted student to DB : {}", student.getName());
+
+    return ResponseEntity.ok("Student successfully posted.");
+}
 
     @GetMapping("/student/get/{name}")
     public ResponseEntity<Student> getStudent(@PathVariable String name) {
